@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Me | John Mwaura - Electrical Engineering Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">John Mwaura<span class="dot">.</span></a>
+            </div>
+            <nav class="navbar">
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- About Me Section -->
+        <section class="page-section about-section">
+            <div class="container">
+                <h2 class="section-title scroll-fade">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text scroll-fade">
+                        <p>I'm <strong>John Mwaura</strong>, a student of Electrical Engineering at Zetech University, passionate about bridging the gap between hardware and software. My focus areas include power electronics, and renewable energy integration.</p>
+                        <p>Throughout my academic journey, I've developed a strong foundation in power generation, energy conservation, and sustainable technologies. I enjoy turning theoretical concepts into practical, real world solutions from design to implementation.</p>
+                        <p>I'm actively seeking internship opportunities where I can contribute to innovative projects and further develop my skills in power systems and renewable energy.</p>
+                    </div>
+                    <div class="about-image scroll-fade">
+                        <i class="fas fa-microchip"></i>
+                        <i class="fas fa-bolt"></i>
+                        <i class="fas fa-charging-station"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (Badges/Pills) -->
+        <section id="skills" class="page-section skills-section">
+            <div class="container">
+                <h2 class="section-title scroll-fade">Technical Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card scroll-fade"><span>Core Electrical/Electronics Basics</span></div>
+                    <div class="skill-card scroll-fade"><span>Practical Electronics Skills</span></div>
+                    <div class="skill-card scroll-fade"><span>Measurements and Lab Skills</span></div>
+                    <div class="skill-card scroll-fade"><span>Fundamental STEM/ Engineering Skills</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4>John Mwaura</h4>
+                <p>Electrical Engineering Student | Innovator & Problem Solver</p>
+                <div class="social-icons">
+                    <a href="mailto:johnym802@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/john-mwaura-43797a3a8/" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://wa.me/+254797267228" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/Johnycodes-995" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Info</h4>
+                <p><i class="fas fa-phone-alt"></i> +254 797 267228</p>
+                <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                <p><i class="fas fa-clock"></i> Available for internships</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="currentYear"></span> John Mwaura. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.getElementById('currentYear').innerText = new Date().getFullYear();
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        if (hamburger) {
+            hamburger.addEventListener('click', () => navMenu.classList.toggle('active'));
+        }
+    </script>
+</body>
+</html>
