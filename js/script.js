@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 media: [
                     { type: "image", src: "assets/images/project-1-solar-installation.jpeg", alt: "Solar inverter setup" },
                     { type: "image", src: "assets/images/solar-inverter.jpeg", alt: "Solar inverter" },
-                    { type: "video", src: "assets/videos/final-solar-installation-test.mp4", alt: "Solar system demo", isYouTube: false }
+                    { type: "video", src: "assets/videos/Final-Solar-Installation-Test.mp4", alt: "Solar system demo", isYouTube: false }
                     // For YouTube videos, add: { type: "video", src: "", alt: "Demo video", isYouTube: true, videoId: "YOUR_YOUTUBE_ID" }
                 ]
             },
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     { type: "image", src: "assets/images/using-pvc-conduit-finished.jpeg", alt: "PVC conduit finished installation" },
                     { type: "image", src: "assets/images/using-pvc-conduit1.jpeg", alt: "pvc conduit layout" },
                     { type: "image", src: "assets/images/CCU-wiring.jpeg", alt: "Distribution board setup" },
-                    { type: "video", src: "assets/videos/final-installation-test-pvc.mp4", alt: "Wiring demonstration", isYouTube: false }
+                    { type: "video", src: "assets/videos/Final-Installation-Test-Pvc.mp4", alt: "Wiring demonstration", isYouTube: false }
                 ]
             },
            {
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
     technologies: "Laptop Hardware Repair, Thermal Paste Application, Preventive Maintenance, Troubleshooting",
     
     media: [
-        { type: "image", src: "assets/images/dirtylaptop2.jpg", alt: "Laptop disassembled showing internal components" },
+        { type: "image", src: "assets/images/dirtylaptop.jpg", alt: "Laptop disassembled showing internal components" },
         { type: "image", src: "assets/images/openlaptop.jpg", alt: "a photo of the laptop" },
     ]
 },
