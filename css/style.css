@@ -113,7 +113,7 @@ body {
     transform: translateY(-2px);
 }
 
-/* ========== HERO SECTION (INDEX) ========== */
+/* ========== HERO SECTION ========== */
 .hero {
     padding: 5rem 0;
     background: linear-gradient(135deg, #ffffff 0%, #f4f7fc 100%);
@@ -206,6 +206,12 @@ body {
     display: inline-block;
 }
 
+.section-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
 .about-content {
     display: flex;
     gap: 3rem;
@@ -250,10 +256,80 @@ body {
     border-color: var(--primary);
 }
 
+/* ========== DOWNLOADABLE DOCUMENTS SECTION ========== */
+.documents-section {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    border-radius: 30px;
+    margin: 2rem 0;
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.document-card {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+}
+
+.document-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.document-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.document-info {
+    flex: 1;
+}
+
+.document-info h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-dark);
+}
+
+.document-info p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-download:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
 /* ========== PROJECTS GRID ========== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -264,7 +340,6 @@ body {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
-    cursor: pointer;
 }
 
 .project-card:hover {
@@ -272,13 +347,113 @@ body {
     box-shadow: var(--shadow-md);
 }
 
-.project-img {
+/* Gallery Container */
+.project-gallery {
+    position: relative;
     width: 100%;
-    height: 200px;
+    height: 250px;
+    overflow: hidden;
+    background: #1a1a2e;
+}
+
+.gallery-slides {
+    display: flex;
+    transition: transform 0.4s ease;
+    height: 100%;
+}
+
+.gallery-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a1a2e;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    background: #d9e2ec;
     cursor: pointer;
-    transition: 0.2s;
+}
+
+.gallery-slide video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Gallery Navigation Buttons */
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.gallery-btn:hover {
+    background: var(--primary);
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
+
+/* Gallery Indicators */
+.gallery-indicators {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    z-index: 10;
+}
+
+.indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: var(--accent);
+    width: 20px;
+    border-radius: 4px;
+}
+
+/* Media Type Badge */
+.media-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
 }
 
 .project-info {
@@ -288,24 +463,64 @@ body {
 .project-info h3 {
     font-size: 1.4rem;
     margin-bottom: 0.5rem;
+    color: var(--primary-dark);
 }
 
+/* FIXED: Expandable details with internal scroll on mobile */
 .expandable-details {
     max-height: 0;
-    overflow: hidden;
+    overflow-y: auto;
     transition: max-height 0.4s ease-out;
     background: #f9fafb;
     margin-top: 1rem;
-    padding: 0 1rem;
     border-radius: 16px;
 }
 
+/* On mobile, allow internal scrolling for long content */
+@media (max-width: 768px) {
+    .project-card.expanded .expandable-details {
+        max-height: 250px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+@media (min-width: 769px) {
+    .project-card.expanded .expandable-details {
+        max-height: 300px;
+    }
+}
+
 .project-card.expanded .expandable-details {
-    max-height: 300px;
     padding: 1rem;
 }
 
-/* Lightbox Modal */
+.expandable-details p {
+    margin-bottom: 0.8rem;
+}
+
+.expandable-details strong {
+    color: var(--primary);
+}
+
+.btn-expand {
+    margin-top: 12px;
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    width: 100%;
+    text-align: left;
+}
+
+.btn-expand:hover {
+    color: var(--accent);
+}
+
+/* ========== LIGHTBOX MODAL (Updated for Gallery) ========== */
 .modal {
     display: none;
     position: fixed;
@@ -314,23 +529,81 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0,0,0,0.85);
+    background-color: rgba(0,0,0,0.95);
     justify-content: center;
     align-items: center;
 }
-.modal-content {
+
+.modal-content-container {
+    position: relative;
     max-width: 90%;
     max-height: 90%;
+}
+
+.modal-content {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    display: none;
+}
+
+.modal-video {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: none;
+}
+
+.modal-video video,
+.modal-video iframe {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    min-height: 400px;
     border-radius: 12px;
 }
+
 .close-modal {
     position: absolute;
-    top: 25px;
+    top: 20px;
     right: 35px;
     color: #fff;
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+    z-index: 2001;
+    transition: var(--transition);
+}
+
+.close-modal:hover {
+    color: var(--accent);
+}
+
+.modal-prev, .modal-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2001;
+}
+
+.modal-prev {
+    left: 20px;
+}
+
+.modal-next {
+    right: 20px;
+}
+
+.modal-prev:hover, .modal-next:hover {
+    background: var(--primary);
 }
 
 /* ========== CONTACT FORM ========== */
@@ -454,5 +727,19 @@ body {
     }
     .hero-illustration i {
         font-size: 5rem;
+    }
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    .documents-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-prev, .modal-next {
+        width: 35px;
+        height: 35px;
+    }
+    .modal-video video,
+    .modal-video iframe {
+        min-height: 250px;
     }
 }
