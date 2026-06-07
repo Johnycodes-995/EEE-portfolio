@@ -743,3 +743,315 @@ body {
         min-height: 250px;
     }
 }
+/* ========== NEW: WHAT I DO SECTION ========== */
+.services-section {
+    background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+    border-radius: 30px;
+    margin: 1rem 0;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 24px;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-light);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    position: relative;
+    display: inline-block;
+}
+
+.service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--primary-dark);
+}
+
+.service-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* Current flow animation on service card hover */
+.service-card:hover .current-flow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent), var(--primary));
+    animation: currentFlow 1.5s linear infinite;
+}
+
+@keyframes currentFlow {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* ========== NEW: CURRENTLY LEARNING SECTION ========== */
+.learning-section {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e8edf5 100%);
+    border-radius: 30px;
+    margin: 2rem 0;
+}
+
+.learning-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.learning-item {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 20px;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.learning-item:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-md);
+}
+
+.learning-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    min-width: 60px;
+    text-align: center;
+}
+
+.learning-content {
+    flex: 1;
+}
+
+.learning-content h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    color: var(--primary-dark);
+}
+
+.learning-content p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--border-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 10px;
+    position: relative;
+    animation: fillProgress 1s ease-out;
+}
+
+@keyframes fillProgress {
+    from { width: 0; }
+    to { width: var(--target-width); }
+}
+
+.progress-label {
+    font-size: 0.75rem;
+    color: var(--primary);
+    margin-left: 0.5rem;
+    font-weight: 500;
+}
+
+/* ========== EE-THEMED ANIMATIONS ========== */
+
+/* Oscilloscope wave divider between sections */
+.page-section:not(:first-child) {
+    position: relative;
+}
+
+.page-section:not(:first-child)::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--primary) 0px, var(--primary) 15px, transparent 15px, transparent 30px);
+    animation: oscillate 2s linear infinite;
+}
+
+@keyframes oscillate {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+}
+
+/* Pulse effect on skill badges */
+.skill-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(44, 95, 138, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.skill-card:hover::after {
+    width: 100%;
+    height: 100%;
+}
+
+/* Transformer spin on icon hover */
+.about-image i, .service-icon i, .learning-icon i {
+    transition: transform 0.4s ease;
+    display: inline-block;
+}
+
+.about-image i:hover, .service-icon i:hover, .learning-icon i:hover {
+    transform: rotate(15deg) scale(1.1);
+}
+
+/* Circuit trace border animation on project cards */
+.project-card {
+    position: relative;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 24px;
+    padding: 2px;
+    background: linear-gradient(135deg, var(--primary), transparent, var(--accent));
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+/* Voltage meter fill animation for scroll reveal */
+.scroll-fade.visible {
+    animation: voltageRise 0.8s ease forwards;
+}
+
+@keyframes voltageRise {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+        filter: brightness(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+        filter: brightness(1);
+    }
+}
+
+/* Subtle glow on active elements */
+.btn-primary:active, .gallery-btn:active {
+    animation: buttonPulse 0.3s ease;
+}
+
+@keyframes buttonPulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 var(--primary); }
+    50% { transform: scale(0.98); box-shadow: 0 0 0 5px rgba(44, 95, 138, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 var(--primary); }
+}
+
+/* Document card hover effect */
+.document-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.document-card::after {
+    content: '⚡';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 3rem;
+    opacity: 0;
+    transition: all 0.4s ease;
+    color: var(--primary);
+}
+
+.document-card:hover::after {
+    opacity: 0.1;
+    bottom: -10px;
+    right: -10px;
+}
+
+/* Responsive adjustments for new sections */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .learning-icon {
+        margin-bottom: 0.5rem;
+    }
+    
+    .progress-label {
+        display: block;
+        text-align: right;
+        margin-top: 0.25rem;
+    }
+    
+    .page-section:not(:first-child)::before {
+        left: 5%;
+        width: 90%;
+    }
+}

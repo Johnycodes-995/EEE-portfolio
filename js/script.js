@@ -17,28 +17,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Projects Page: Generate dynamic cards with GALLERY support (multiple images + videos)
     const projectsGrid = document.getElementById('projectsGrid');
     if (projectsGrid) {
-        // Project data with MULTIPLE IMAGES and VIDEO support
-        // 📸 ADD your images and videos here - each project can have multiple media files
+        // Project data with PROBLEM → ACTION → RESULT format
         const projectsData = [
             { 
                 title: "Solar Power System Installation", 
-                shortDesc: "Design and installation of a solar power system for residential use.", 
-                fullDesc: "Installed a solar power system for a residential property, including battery storage and grid-tie inverter. The system includes solar panel 12v, 12v lithium battery bank, and a hybrid inverter with smart monitoring capabilities. Achieved 30% reduction in electricity bills.",
+                shortDesc: "Design and installation of a solar power system for residential use.",
+                problem: "High electricity bills and unreliable grid power affecting daily activities.",
+                action: "Designed and installed a 1kW solar power system with 12v lithium battery bank, hybrid inverter, and smart monitoring capabilities.",
+                result: "Achieved 30% reduction in electricity bills and reliable backup power during grid outages.",
                 technologies: "Solar Panels, Battery Storage, Inverter Design, Power Electronics",
-                // NEW: Multiple media (images + videos) for this project
                 media: [
                     { type: "image", src: "assets/images/project-1-solar-installation.jpeg", alt: "Solar inverter setup" },
                     { type: "image", src: "assets/images/solar-inverter.jpeg", alt: "Solar inverter" },
                     { type: "video", src: "assets/videos/Final-Solar-Installation-Test.mp4", alt: "Solar system demo", isYouTube: false }
-                    // For YouTube videos, add: { type: "video", src: "", alt: "Demo video", isYouTube: true, videoId: "YOUR_YOUTUBE_ID" }
                 ]
             },
             { 
-                title: "pvc conduit house wiring", 
-                shortDesc: "Installation of PVC conduits for electrical wiring in a residential building.", 
-                fullDesc: "Installed PVC conduit wiring for a residential building, ensuring compliance with electrical codes and safety standards. The project involved measuring the right distances as per the instructions given and complete wiring of distribution boards, and testing for continuity and insulation resistance. The system is designed for durability and ease of maintenance.",
+               title: "Hp Elitebook 8470p display troubleshoot", 
+                shortDesc: "Diagnosed and resolved display issues on an HP Elitebook 8470p laptop.",
+                problem: "Laptop display was not turning on despite being powered.",
+                action: "Did a system power reset, came back without keyboard drivers, then reinstalled display drivers and updated BIOS to fix the issue.",
+                result: "Restored display and also cleaned the display connections and fans.",
+                technologies: "Laptop Display Repair, Troubleshooting, Hardware Diagnostics, Visual Calibration",
+                media: [
+                    { type: "image", src: "assets/images/hp1.jpg", alt: "HP Elitebook display issue" },
+                    { type: "image", src: "assets/images/hp2.jpg", alt: "HP Elitebook display repair" },
+                    { type: "image", src: "assets/images/hp3.jpg", alt: "HP Elitebook display troubleshooting" },
+                    { type: "image", src: "assets/images/hp4.jpg", alt: "HP Elitebook display fixed" },
+                ]
+            },
+            { 
+                title: "PVC Conduit House Wiring", 
+                shortDesc: "Installation of PVC conduits for electrical wiring in a residential building.",
+                problem: "Exposed wiring posed safety hazards and didn't meet electrical code standards.",
+                action: "Installed complete PVC conduit system including distribution boards, continuity testing, and insulation resistance verification.",
+                result: "Safe, code-compliant electrical system with easy maintenance access and improved aesthetics.",
                 technologies: "Electrical Wiring, PVC Conduits, Safety Standards, Residential Electrical Systems",
-                // NEW: Multiple media for this project
                 media: [
                     { type: "image", src: "assets/images/using-pvc-conduit-finished.jpeg", alt: "PVC conduit finished installation" },
                     { type: "image", src: "assets/images/using-pvc-conduit1.jpeg", alt: "pvc conduit layout" },
@@ -46,23 +60,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     { type: "video", src: "assets/videos/Final-Installation-Test-Pvc.mp4", alt: "Wiring demonstration", isYouTube: false }
                 ]
             },
-           {
-    title: "Laptop Disassembly, Hinge Repair & Thermal Maintenance",
-    shortDesc: "Disassembled a Lenovo laptop, repaired loose hinges, cleaned internal components, and reapplied thermal paste for improved performance.",
-    fullDesc: "Diagnosed and repaired a Lenovo laptop with loose hinges and reduced thermal performance. The process involved carefully disassembling the laptop, identifying and fixing the hinge mechanism, removing dust buildup from internal components, and reapplying thermal paste to the CPU for better heat transfer. The device was then reassembled and tested to ensure structural stability and improved cooling performance.",
-    technologies: "Laptop Hardware Repair, Thermal Paste Application, Preventive Maintenance, Troubleshooting",
-    
-    media: [
-        { type: "image", src: "assets/images/dirtylaptop.jpg", alt: "Laptop disassembled showing internal components" },
-        { type: "image", src: "assets/images/openlaptop.jpg", alt: "a photo of the laptop" },
-    ]
-},
+            {
+                title: "Laptop Disassembly, Hinge Repair & Thermal Maintenance",
+                shortDesc: "Disassembled a Lenovo laptop, repaired loose hinges, cleaned internal components, and reapplied thermal paste.",
+                problem: "Laptop had loose hinges causing screen wobble and overheating issues due to dried thermal paste.",
+                action: "Carefully disassembled the laptop, repaired hinge mechanism, cleaned dust buildup, and reapplied high-quality thermal paste.",
+                result: "Restored structural stability, reduced operating temperature by 15°C, and extended device lifespan.",
+                technologies: "Laptop Hardware Repair, Thermal Paste Application, Preventive Maintenance, Troubleshooting",
+                media: [
+                    { type: "image", src: "assets/images/dirtylaptop.jpg", alt: "Laptop disassembled showing internal components" },
+                    { type: "image", src: "assets/images/openlaptop.jpg", alt: "A photo of the laptop" },
+                ]
+            },
             { 
-                title: "mini trunking system", 
-                shortDesc: "Design and implementation of a mini trunking system for cable management.", 
-                fullDesc: "Designed and implemented a mini trunking system for efficient cable management in a residential set-up simulation. The system includes custom-designed trunking channels, junction boxes, and cable organizers to route power and data cables neatly along walls and ceilings. This solution improved aesthetics and reduced the risk of cable damage while allowing for easy access for future modifications.",
+                title: "Mini Trunking System", 
+                shortDesc: "Design and implementation of a mini trunking system for cable management.",
+                problem: "Cluttered and unsafe cable arrangement created trip hazards and made maintenance difficult.",
+                action: "Designed and installed custom trunking channels, junction boxes, and cable organizers along walls and ceilings.",
+                result: "Clean, professional cable management system with easy access for future modifications and improved safety.",
                 technologies: "Cable Management, Trunking Design, Electrical Installation, Residential Set-up",
-                // NEW: Multiple media for this project
                 media: [
                     { type: "image", src: "assets/images/preping-mini-trunking.jpeg", alt: "preparing the trunking system" },
                     { type: "image", src: "assets/images/using-mini-trunking.jpeg", alt: "finished trunking system" },
@@ -77,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.className = 'project-card';
             card.setAttribute('data-idx', idx);
             
-            // NEW: Build gallery HTML for multiple images/videos
+            // Build gallery HTML for multiple images/videos
             let galleryHTML = `
                 <div class="project-gallery" data-project-idx="${idx}">
                     <div class="gallery-slides" id="gallerySlides-${idx}">
@@ -112,82 +128,74 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
-            // Create card with gallery (keeping your original structure)
+            // Create card with gallery and PROBLEM → ACTION → RESULT format
             card.innerHTML = galleryHTML + `
                 <div class="project-info">
                     <h3>${proj.title}</h3>
                     <p>${proj.shortDesc}</p>
                     <div class="expandable-details">
-                        <p><strong> <img src="assets/icons/icons8-clipboard-48.png" alt="Full details" width="24" height="24"> Full details:</strong> ${proj.fullDesc}</p>
+                        <div class="problem-solution">
+                            <div class="problem">
+                                <strong>❌ Problem:</strong> ${proj.problem}
+                            </div>
+                            <div class="action">
+                                <strong>⚡ Action:</strong> ${proj.action}
+                            </div>
+                            <div class="result">
+                                <strong>✅ Result:</strong> ${proj.result}
+                            </div>
+                        </div>
                         <p><strong> <img src="assets/icons/icons8-gears-50.png" alt="Technologies" width="24" height="24"> Technologies:</strong> ${proj.technologies}</p>
                     </div>
                     <button class="btn-expand">▼ Expand</button>
                 </div>
             `;
             
-           // Expand/Collapse functionality - ONLY ONE PROJECT EXPANDED AT A TIME + COLLAPSE ON CLICK OUTSIDE
-const expandBtn = card.querySelector('.btn-expand');
-const expandableDiv = card.querySelector('.expandable-details');
-
-expandBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    
-    // Check if current card is already expanded
-    const isCurrentlyExpanded = card.classList.contains('expanded');
-    
-    // FIRST: Collapse ALL other project cards
-    const allProjectCards = document.querySelectorAll('.project-card');
-    allProjectCards.forEach(otherCard => {
-        if (otherCard !== card && otherCard.classList.contains('expanded')) {
-            otherCard.classList.remove('expanded');
-            const otherBtn = otherCard.querySelector('.btn-expand');
-            if (otherBtn) {
-                otherBtn.innerHTML = '▼ Expand';
-            }
-            // Reset overflow on other cards
-            const otherExpandable = otherCard.querySelector('.expandable-details');
-            if (otherExpandable) {
-                otherExpandable.style.overflowY = '';
-            }
-        }
-    });
-    // COLLAPSE WHEN CLICKING OUTSIDE ANY PROJECT CARD
-document.addEventListener('click', (e) => {
-    // Check if click is NOT inside any project card
-    if (!e.target.closest('.project-card')) {
-        const expandedCards = document.querySelectorAll('.project-card.expanded');
-        expandedCards.forEach(expandedCard => {
-            expandedCard.classList.remove('expanded');
-            const btn = expandedCard.querySelector('.btn-expand');
-            if (btn) {
-                btn.innerHTML = '▼ Expand';
-            }
-            const expandableDiv = expandedCard.querySelector('.expandable-details');
-            if (expandableDiv) {
-                expandableDiv.style.overflowY = '';
-            }
-        });
-    }
-});
-    
-    // THEN: Toggle the clicked card
-    if (!isCurrentlyExpanded) {
-        card.classList.add('expanded');
-        expandBtn.innerHTML = '▲ Collapse';
-        // FIX: On mobile, allow internal scrolling without affecting page scroll
-        expandableDiv.style.overflowY = 'auto';
-        expandableDiv.style.webkitOverflowScrolling = 'touch';
-    } else {
-        card.classList.remove('expanded');
-        expandBtn.innerHTML = '▼ Expand';
-        expandableDiv.style.overflowY = '';
-    }
-});
+            // Expand/Collapse functionality - ONLY ONE PROJECT EXPANDED AT A TIME
+            const expandBtn = card.querySelector('.btn-expand');
+            const expandableDiv = card.querySelector('.expandable-details');
+            
+            expandBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // Check if current card is already expanded
+                const isCurrentlyExpanded = card.classList.contains('expanded');
+                
+                // FIRST: Collapse ALL other project cards
+                const allProjectCards = document.querySelectorAll('.project-card');
+                allProjectCards.forEach(otherCard => {
+                    if (otherCard !== card && otherCard.classList.contains('expanded')) {
+                        otherCard.classList.remove('expanded');
+                        const otherBtn = otherCard.querySelector('.btn-expand');
+                        if (otherBtn) {
+                            otherBtn.innerHTML = '▼ Expand';
+                        }
+                        // Reset overflow on other cards
+                        const otherExpandable = otherCard.querySelector('.expandable-details');
+                        if (otherExpandable) {
+                            otherExpandable.style.overflowY = '';
+                        }
+                    }
+                });
+                
+                // THEN: Toggle the clicked card
+                if (!isCurrentlyExpanded) {
+                    card.classList.add('expanded');
+                    expandBtn.innerHTML = '▲ Collapse';
+                    // FIX: On mobile, allow internal scrolling without affecting page scroll
+                    expandableDiv.style.overflowY = 'auto';
+                    expandableDiv.style.webkitOverflowScrolling = 'touch';
+                } else {
+                    card.classList.remove('expanded');
+                    expandBtn.innerHTML = '▼ Expand';
+                    expandableDiv.style.overflowY = '';
+                }
+            });
             
             // Initialize gallery for this project
             initGalleryForProject(idx, proj.media.length);
             
-            // Click on any media to open lightbox (UPDATED for videos)
+            // Click on any media to open lightbox
             const slides = card.querySelectorAll('.gallery-slide');
             slides.forEach((slide, slideIdx) => {
                 slide.addEventListener('click', (e) => {
@@ -203,9 +211,28 @@ document.addEventListener('click', (e) => {
             
             projectsGrid.appendChild(card);
         });
+        
+        // COLLAPSE WHEN CLICKING OUTSIDE ANY PROJECT CARD
+        document.addEventListener('click', (e) => {
+            // Check if click is NOT inside any project card
+            if (!e.target.closest('.project-card')) {
+                const expandedCards = document.querySelectorAll('.project-card.expanded');
+                expandedCards.forEach(expandedCard => {
+                    expandedCard.classList.remove('expanded');
+                    const btn = expandedCard.querySelector('.btn-expand');
+                    if (btn) {
+                        btn.innerHTML = '▼ Expand';
+                    }
+                    const expandableDiv = expandedCard.querySelector('.expandable-details');
+                    if (expandableDiv) {
+                        expandableDiv.style.overflowY = '';
+                    }
+                });
+            }
+        });
     }
     
-    // NEW: Gallery initialization function (for carousel navigation)
+    // Gallery initialization function (for carousel navigation)
     function initGalleryForProject(projectIdx, totalSlides) {
         let currentIndex = 0;
         const slidesContainer = document.getElementById(`gallerySlides-${projectIdx}`);
@@ -256,12 +283,10 @@ document.addEventListener('click', (e) => {
         goToSlide(0);
     }
 
-    // 3. Lightbox Modal logic (UPDATED to handle both images AND videos)
+    // 3. Lightbox Modal logic (handles both images AND videos)
     const modal = document.getElementById('lightboxModal');
     const modalImg = document.getElementById('modalImage');
     const modalVideo = document.getElementById('modalVideo');
-    
-    // If modalVideo doesn't exist in HTML, we'll need to add it (but projects.html already has it)
     
     if (modal && modalImg) {
         // Close modal when clicking X
@@ -288,7 +313,7 @@ document.addEventListener('click', (e) => {
         let currentMediaArray = [];
         let currentMediaIndex = 0;
         
-        // UPDATED: Global function to open lightbox with images OR videos
+        // Global function to open lightbox with images OR videos
         window.openLightbox = (mediaType, src, isYouTube, videoId, mediaArray, index) => {
             currentMediaArray = mediaArray;
             currentMediaIndex = index;
@@ -314,8 +339,8 @@ document.addEventListener('click', (e) => {
                 if (modalVideo) {
                     modalVideo.style.display = 'block';
                     if (item.isYouTube) {
-                        // YouTube embed
-                        const embedUrl = `https://www.youtube.com/embed/${item.videoId}?autoplay=1`;
+                        // YouTube embed with mute
+                        const embedUrl = `https://www.youtube.com/embed/${item.videoId}?autoplay=1&mute=1`;
                         const iframe = document.createElement('iframe');
                         iframe.src = embedUrl;
                         iframe.width = "100%";
@@ -325,7 +350,7 @@ document.addEventListener('click', (e) => {
                         iframe.allow = "autoplay; fullscreen";
                         modalVideo.appendChild(iframe);
                     } else {
-                        // Local video
+                        // Local video (starts muted, user can unmute)
                         const video = document.createElement('video');
                         video.src = item.src;
                         video.controls = true;
@@ -358,10 +383,10 @@ document.addEventListener('click', (e) => {
         if (nextBtn) nextBtn.onclick = nextMedia;
     }
 
-    // 4. EmailJS Integration (YOUR EXISTING CODE - PRESERVED)
+    // 4. EmailJS Integration (Your existing setup)
     const contactForm = document.getElementById('contactForm');
     if (contactForm && typeof emailjs !== 'undefined') {
-        // Your EmailJS credentials (already configured)
+        // Your EmailJS credentials
         const EMAILJS_SERVICE_ID = 'service_6jvo4go';
         const EMAILJS_TEMPLATE_ID = 'template_3i232tv';
         const EMAILJS_USER_ID = 'nr0e4Va9JoK0zmrsy';
